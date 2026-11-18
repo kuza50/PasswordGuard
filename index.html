@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<link rel="stylesheet" href="style.css"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PasswordGuard — защита паролей</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>PasswordGuard</h1>
+    <p class="subtitle">
+        Создавай надёжные пароли и проверяй их безопасность.
+    </p>
+</header>
+
+<h2>Генератор паролей</h2>
+
+<div class="password-box">
+    <input type="text" id="password"
+           placeholder="Твой пароль появится здесь"
+           autocomplete="off">
+    <button class="copy-button" onclick="copyPassword()">
+        Копировать
+    </button>
+</div>
+
+<label>
+    Длина пароля:
+    <input type="number" id="length"
+           value="16" min="4" max="50">
+</label>
+
+<label>
+    <input type="checkbox" id="numbers" checked>
+    Использовать цифры
+</label>
+
+<label>
+    <input type="checkbox" id="symbols" checked>
+    Использовать специальные символы
+</label>
+
+<button class="generate-button" onclick="generatePassword()">
+    Создать надёжный пароль
+</button>
+
+<p class="message" id="message"></p>
+
+<div class="strength-box">
+
+    <h2>Проверка надёжности</h2>
+
+    <p>
+        Результат:
+        <span id="strengthText">Ожидание пароля</span>
+    </p>
+
+    <div class="progress">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <ul class="criteria">
+        <li id="c1">Длина больше 8 символов</li>
+        <li id="c2">Длина больше 12 символов</li>
+        <li id="c3">Есть заглавные буквы</li>
+        <li id="c4">Есть цифры</li>
+        <li id="c5">Есть специальные символы</li>
+    </ul>
+
+</div>
+
+<footer>PasswordGuard — учебный проект по информатике
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
